@@ -25,9 +25,11 @@ namespace CompanyTask.Domain.Entities
         //Navigation Properties
         public Department? Department { get; set; }
         public AppUser? Manager { get; set; }
+        public Company? CompanyRepresentative { get; set; }
         public List<AppUser>? Employees { get; set; }
         public Address? Address { get; set; }
         public Title? Title { get; set; }
         public Company? Company { get; set; }
+        public List<WorkShift> WorkShifts { get; set; }
     }
 }

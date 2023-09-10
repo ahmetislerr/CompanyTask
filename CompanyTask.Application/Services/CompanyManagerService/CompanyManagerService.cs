@@ -153,12 +153,12 @@ namespace CompanyTask.Application.Services.CompanyManagerService
                 CityId = x.Address.District.CityId,
                 DistrictId = x.Address.DistrictId,
                 AddressDescription = x.Address.Description,
-                ManagerId = x.ManagerId,
+                ManagerId = x.CompanyRepresentativeId,
                 ImagePath = x.ImagePath
             },
             where: x => x.Id == id,
             orderby: null,
-            include: x => x.Include(x => x.Address).Include(x => x.Address.District).Include(x => x.Address.District.City).Include(x => x.Manager)
+            include: x => x.Include(x => x.Address).Include(x => x.Address.District).Include(x => x.Address.District.City).Include(x => x.CompanyRepresentative)
             );
 
             return result;
@@ -283,7 +283,7 @@ namespace CompanyTask.Application.Services.CompanyManagerService
                 await _addressRepository.Update(address);
             }
 
-            company.ManagerId = model.ManagerId;
+            company.CompanyRepresentativeId = model.ManagerId;
             return await _companyRepository.Update(company);
         }
 

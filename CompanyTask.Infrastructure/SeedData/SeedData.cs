@@ -150,7 +150,7 @@ namespace CompanyTask.Infrastructure.SeedData
 
                     await companyManagerStore.CreateAsync(companyManager);
                     await companyManagerStore.AddToRoleAsync(companyManager, "COMPANYMANAGER");
-                    company.ManagerId = companyManagerId;
+                    company.CompanyRepresentativeId = companyManagerId;
                     context.Companies.Update(company);
                     await context.SaveChangesAsync();
 

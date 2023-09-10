@@ -4,6 +4,7 @@ using CompanyTask.Application.Models.DTOs.CompanyDTO;
 using CompanyTask.Application.Models.DTOs.CompanyManagerDTO;
 using CompanyTask.Application.Models.DTOs.DepartmentDTOs;
 using CompanyTask.Application.Models.DTOs.TitleDTOs;
+using CompanyTask.Application.Models.DTOs.WorkShiftDTOs;
 using CompanyTask.Domain.Entities;
 
 namespace CompanyTask.Application.AutoMapper
@@ -27,6 +28,9 @@ namespace CompanyTask.Application.AutoMapper
             CreateMap<Company, RegisterDTO>().ReverseMap();
 
             CreateMap<Address, RegisterDTO>().ReverseMap();
+
+            CreateMap<WorkShift, CreateWorkShiftDTO>().ReverseMap();
+            CreateMap<WorkShift, UpdateWorkShiftDTO>().ReverseMap();
         }
     }
 }

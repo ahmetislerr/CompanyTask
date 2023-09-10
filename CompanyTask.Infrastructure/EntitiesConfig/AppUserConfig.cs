@@ -29,21 +29,12 @@ namespace CompanyTask.Infrastructure.EntitiesConfig
                 .HasColumnType("date")
                 .HasColumnOrder(4);
 
-
-            builder.Property(x => x.DepartmentId)
+            builder.Property(x => x.ManagerId)
                 .IsRequired(false)
                 .HasColumnOrder(5);
 
-            builder.Property(x => x.BloodTypeId)
-                .IsRequired(false)
-                .HasColumnOrder(6);
-
-            builder.Property(x => x.ManagerId)
-                .IsRequired(false)
-                .HasColumnOrder(7);
-
             builder.Property(x => x.UserName)
-                .HasMaxLength(30).HasColumnOrder(8);
+                .HasMaxLength(30).HasColumnOrder(6);
 
 
             //Foreign Key one to many

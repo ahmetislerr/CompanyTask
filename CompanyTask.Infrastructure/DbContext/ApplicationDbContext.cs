@@ -21,6 +21,7 @@ namespace CompanyTask.Infrastructure.DbContext
         public DbSet<Title> Titles { get; set; }
         public DbSet<Company> Companies { get; set; }
         public DbSet<CompanySector> CompanySectors { get; set; }
+        public DbSet<WorkShift> WorkShifts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -33,7 +34,8 @@ namespace CompanyTask.Infrastructure.DbContext
                         .ApplyConfiguration(new StatuConfig())
                         .ApplyConfiguration(new TitleConfig())
                         .ApplyConfiguration(new CompanyConfig())
-                        .ApplyConfiguration(new CompanySectorConfig());
+                        .ApplyConfiguration(new CompanySectorConfig())
+                        .ApplyConfiguration(new WorkShiftConfig());
 
             foreach (var foreignKey in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
             {

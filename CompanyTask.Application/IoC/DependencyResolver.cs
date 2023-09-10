@@ -7,6 +7,7 @@ using CompanyTask.Application.Services.CompanyManagerService;
 using CompanyTask.Application.Services.DepartmentService;
 using CompanyTask.Application.Services.PersonelService;
 using CompanyTask.Application.Services.TitleService;
+using CompanyTask.Application.Services.WorkShiftService;
 using CompanyTask.Domain.Repositories;
 using CompanyTask.Infrastructure.Repositories;
 
@@ -27,6 +28,7 @@ namespace CompanyTask.Application.IoC
             builder.RegisterType<CompanyRepository>().As<ICompanyRepository>().InstancePerLifetimeScope();
             builder.RegisterType<CompanySectorRepository>().As<ICompanySectorRepository>().InstancePerLifetimeScope();
             builder.RegisterType<CountryRepository>().As<ICountryRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<WorkShiftRepository>().As<IWorkShiftRepository>().InstancePerLifetimeScope();
 
             builder.RegisterType<AccountService>().As<IAccountService>().InstancePerLifetimeScope();
             builder.RegisterType<PersonelService>().As<IPersonelService>().InstancePerLifetimeScope();
@@ -34,6 +36,7 @@ namespace CompanyTask.Application.IoC
             builder.RegisterType<DepartmentService>().As<IDepartmentService>().InstancePerLifetimeScope();
             builder.RegisterType<CompanyManagerService>().As<ICompanyManagerService>().InstancePerLifetimeScope();
             builder.RegisterType<TitleService>().As<ITitleService>().InstancePerLifetimeScope();
+            builder.RegisterType<WorkShiftService>().As<IWorkShiftService>().InstancePerLifetimeScope();
 
 
             #region AutoMapper

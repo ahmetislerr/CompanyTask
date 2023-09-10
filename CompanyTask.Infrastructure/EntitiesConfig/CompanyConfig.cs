@@ -57,9 +57,9 @@ namespace CompanyTask.Infrastructure.EntitiesConfig
                .HasForeignKey(x => x.CompanySectorId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            builder.HasOne(x => x.Manager)
-                .WithOne(x => x.Company)
-                .HasForeignKey<Company>(x => x.ManagerId)
+            builder.HasOne(x => x.CompanyRepresentative)
+                .WithOne(x => x.CompanyRepresentative)
+                .HasForeignKey<Company>(x => x.CompanyRepresentativeId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             base.Configure(builder);
